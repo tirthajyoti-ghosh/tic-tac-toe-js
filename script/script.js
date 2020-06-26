@@ -5,7 +5,7 @@
 function gamePlay() {
   // turns
   let a = 0;
-  const turns = ['x', 'o'];
+  const turns = ['X', 'O'];
   let turn = turns[a];
   // players turns
 
