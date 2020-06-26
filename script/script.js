@@ -7,12 +7,12 @@ function gamePlay() {
   let a = 0;
   const turns = ['X', 'O'];
   let turn = turns[a];
-  // players turns
 
   const board = document.getElementById('board');
   const cells = board.children;
   for (let i = 0; i < cells.length; i += 1) {
     const cell = cells[i];
+    //  console.log(cells[i])
     cell.addEventListener('click', () => {
       if (cell.innerText !== '') {
         return;
@@ -22,6 +22,14 @@ function gamePlay() {
       board.classList.toggle('player-1');
       a += 1;
       turn = turns[a % 2];
+      const num = result(cells);
+      if (num === 3) {
+        console.log('yessssss');
+        // alert('asjka')
+      }
+      if (num === 2){
+        console.log('draw')
+      }
     });
   }
 }
