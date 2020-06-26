@@ -3,10 +3,12 @@
 /* eslint-disable linebreak-style */
 
 function gamePlay() {
+  const player1 = Player('X')
+  const player2 = Player('O')
   // turns
-  let a = 0;
-  const turns = ['X', 'O'];
-  let turn = turns[a];
+  // let a = 0;
+  // const turns = ['X', 'O'];
+  let turn = 'X';
   // players turns
 
   const board = document.getElementById('board');
@@ -20,8 +22,21 @@ function gamePlay() {
       cell.innerText = turn;
       board.classList.toggle('player-2');
       board.classList.toggle('player-1');
-      a += 1;
-      turn = turns[a % 2];
+      // a += 1;
+      if (turn === 'X') {
+        player1.moves.push(i);
+        turn = 'O'
+      } else {
+        player2.moves.push(i);        
+        turn = 'X'
+      }
+
+      console.log(`Player1 moves -> ${player1.moves}`);
+      console.log(`Player2 moves -> ${player2.moves}`);
     });
   }
+
+  
 }
+
+
