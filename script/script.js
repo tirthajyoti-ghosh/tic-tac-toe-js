@@ -1,5 +1,8 @@
+/* eslint-disable no-loop-func */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 
-function game_play() {
+function gamePlay() {
   // turns
   let a = 0;
   const turns = ['x', 'o'];
@@ -8,10 +11,9 @@ function game_play() {
 
   const board = document.getElementById('board');
   const cells = board.children;
-  for (let i = 0; i < cells.length; i++) {
-    
+  for (let i = 0; i < cells.length; i += 1) {
+    const cell = cells[i];
     cell.addEventListener('click', () => {
-      console.log(i)
       if (cell.innerText !== '') {
         return;
       }
@@ -20,7 +22,6 @@ function game_play() {
       board.classList.toggle('player-1');
       a += 1;
       turn = turns[a % 2];
-
     });
   }
 }
