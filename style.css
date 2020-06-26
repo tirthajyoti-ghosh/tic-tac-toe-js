@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+#board {
+  display: flex;
+  background-color: brown;
+  width: 450px;
+  flex-wrap: wrap;
+}
+
+#board.player-2 {
+  background-color: blue;
+}
+
+#board .cell {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  color: white;
+  font-size: 90px;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
