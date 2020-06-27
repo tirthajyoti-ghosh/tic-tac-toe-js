@@ -37,7 +37,7 @@ function gamePlay() {
       
       if (game.isWinner(player2.moves)) {
         setTimeout(() => {
-          alert('Player 3 has won!');          
+          alert('Player 2 has won!');          
           window.location.reload();
         }, 150);
       }
