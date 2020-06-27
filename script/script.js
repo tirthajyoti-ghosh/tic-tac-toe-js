@@ -31,8 +31,20 @@ function gamePlay() {
         turn = 'X'
       }
 
-      console.log(`Player1 moves -> ${player1.moves}`);
-      console.log(`Player2 moves -> ${player2.moves}`);
+      if (game.isWinner(player1.moves)) {
+        alert('Player 1 has won!');
+        // break;
+      }
+      
+      if (game.isWinner(player2.moves)) {
+        alert('Player 2 has won!');
+        // break;
+      }
+
+      if (game.isDraw(cells)) {
+        alert('The game is draw');
+        // break;
+      }
     });
   }
 

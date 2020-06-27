@@ -15,7 +15,18 @@ const game = (() => {
     return false;
   };
 
+  const isDraw = (cells) => {
+    for (const cell of cells) {
+      if (cell.innerText === '') {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   return {
-    isWinner
+    isWinner,
+    isDraw
   };
 })();
