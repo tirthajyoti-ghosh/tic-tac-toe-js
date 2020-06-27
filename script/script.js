@@ -48,6 +48,9 @@ function gamePlay() {
           window.location.reload();
         }, 150);
       }
+
+      /* Known bug:
+      Currently isDraw returns true if none of the cells are empty. But it also returns true when a player has won by placing his token at the last box (after which all box are filled). */
     });
   }  
 }
