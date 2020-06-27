@@ -5,11 +5,8 @@
 function gamePlay() {
   const player1 = Player('X')
   const player2 = Player('O')
-  // turns
-  // let a = 0;
-  // const turns = ['X', 'O'];
+  
   let turn = 'X';
-  // players turns
 
   const board = document.getElementById('board');
   const cells = board.children;
@@ -22,7 +19,7 @@ function gamePlay() {
       cell.innerText = turn;
       board.classList.toggle('player-2');
       board.classList.toggle('player-1');
-      // a += 1;
+      
       if (turn === 'X') {
         player1.moves.push(i);
         turn = 'O'
@@ -32,23 +29,25 @@ function gamePlay() {
       }
 
       if (game.isWinner(player1.moves)) {
-        alert('Player 1 has won!');
-        // break;
+        setTimeout(() => {
+          alert('Player 1 has won!');          
+          window.location.reload();
+        }, 150);
       }
       
       if (game.isWinner(player2.moves)) {
-        alert('Player 2 has won!');
-        // break;
+        setTimeout(() => {
+          alert('Player 3 has won!');          
+          window.location.reload();
+        }, 150);
       }
 
       if (game.isDraw(cells)) {
-        alert('The game is draw');
-        // break;
+        setTimeout(() => {
+          alert('The game is draw');
+          window.location.reload();
+        }, 150);
       }
     });
-  }
-
-  
+  }  
 }
-
-
