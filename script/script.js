@@ -11,12 +11,14 @@ function gamePlay() {
 
   const board = document.getElementById('board');
   const cells = board.children;
+
   for (let i = 0; i < cells.length; i += 1) {
     const cell = cells[i];
     cell.addEventListener('click', () => {
       if (cell.innerText !== '') {
         return;
       }
+      
       cell.innerText = turn;
       board.classList.toggle('player-2');
       board.classList.toggle('player-1');
@@ -29,26 +31,21 @@ function gamePlay() {
         turn = 'X';
       }
 
+      let hasWon = 0;
+
       if (game.isWinner(player1.moves)) {
-        setTimeout(() => {
-          document.getElementById('alert').innerText = 'Player 1 has won!';
-        }, 150);
+        document.getElementById('alert').innerText = 'Player 1 has won!';
+        hasWon = 1;
       }
-
+      
       if (game.isWinner(player2.moves)) {
-        setTimeout(() => {
-          document.getElementById('alert').innerText = 'Player 2 has won!';
-        }, 150);
+        document.getElementById('alert').innerText = 'Player 2 has won!';
+        hasWon = 1;
       }
-
-      if (game.isDraw(cells)) {
-        setTimeout(() => {
-          document.getElementById('alert').innerText = 'The game is draw';
-        }, 150);
+      
+      if ((hasWon === 0) && (game.isDraw(cells))) {
+        document.getElementById('alert').innerText = 'The game is draw';
       }
-
-      /* Known bug:
-      Currently isDraw returns true if none of the cells are empty. But it also returns true    when a player has won by placing his token at the last box (after which all boxes are filled). */
     });
   }
 }
