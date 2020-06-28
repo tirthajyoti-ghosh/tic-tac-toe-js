@@ -30,22 +30,19 @@ function gamePlay() {
 
       if (game.isWinner(player1.moves)) {
         setTimeout(() => {
-          alert('Player 1 has won!');          
-          window.location.reload();
+          document.getElementById('alert').innerText = 'Player 1 has won!';
         }, 150);
       }
       
       if (game.isWinner(player2.moves)) {
         setTimeout(() => {
-          alert('Player 2 has won!');          
-          window.location.reload();
+          document.getElementById('alert').innerText = 'Player 2 has won!';
         }, 150);
       }
-
+      
       if (game.isDraw(cells)) {
         setTimeout(() => {
-          alert('The game is draw');
-          window.location.reload();
+          document.getElementById('alert').innerText = 'The game is draw';
         }, 150);
       }
 
