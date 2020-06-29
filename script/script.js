@@ -7,10 +7,12 @@ function gamePlay() {
   const player1 = Player('X');
   const player2 = Player('O');
 
+  
+  const gameBoardObj = gameBoard();
+  const board = gameBoardObj.board;
+  const cells = gameBoardObj.cells;
+  
   let turn = 'X';
-
-  const board = document.getElementById('board');
-  const cells = board.children;
 
   for (let i = 0; i < cells.length; i += 1) {
     const cell = cells[i];
@@ -19,7 +21,8 @@ function gamePlay() {
         return;
       }
 
-      cell.innerText = turn;
+      gameBoardObj.setTurn(cell, turn);
+
       board.classList.toggle('player-2');
       board.classList.toggle('player-1');
 
