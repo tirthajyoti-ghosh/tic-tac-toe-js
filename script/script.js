@@ -18,7 +18,7 @@ function gamePlay() {
       if (cell.innerText !== '') {
         return;
       }
-      
+
       cell.innerText = turn;
       board.classList.toggle('player-2');
       board.classList.toggle('player-1');
@@ -37,12 +37,12 @@ function gamePlay() {
         document.getElementById('alert').innerText = 'Player 1 has won!';
         hasWon = 1;
       }
-      
+
       if (game.isWinner(player2.moves)) {
         document.getElementById('alert').innerText = 'Player 2 has won!';
         hasWon = 1;
       }
-      
+
       if ((hasWon === 0) && (game.isDraw(cells))) {
         document.getElementById('alert').innerText = 'The game is draw';
       }
