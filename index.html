@@ -7,19 +7,19 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="gamePlay()">
+<body>
   <h1>Tic Tac Toe</h1>
-  <form action="javascript: input(this)" class="form">
+  <form action="javascript: initPlayers(this)" class="form">
     <div class="field">
       <label for="player1">
         Player 1 name:
-        <input type="text" name="player1">
+        <input type="text" id="player1" required>
       </label>
     </div>
     <div class="field">
       <label for="player2">
         Player 2 name:
-        <input type="text" name="player2">
+        <input type="text" id="player2" required>
       </label>
     </div>
     
@@ -28,8 +28,7 @@
     </div>
   </form>
 
-  <h2>Player one -> "X", color -> brown</h2>
-  <h2>Player two -> "O", color -> blue</h2>
+  <div id="info"></div>
   
   <div id="board" class="player-1 disabled">
     <div id="reset">

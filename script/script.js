@@ -12,10 +12,7 @@ const gameController = (() => {
     });
   };
 
-  const run = () => {
-    const player1 = Player('X');
-    const player2 = Player('O');
-
+  const run = (player1, player2) => {
     const { board } = gameBoard;
     const { cells } = gameBoard;
 
@@ -45,12 +42,12 @@ const gameController = (() => {
         let hasWon = 0;
 
         if (game.isWinner(player1.moves)) {
-          reset('Player 1 has won!');
+          reset(`${player1.name} has won!`);
           hasWon = 1;
         }
 
         if (game.isWinner(player2.moves)) {
-          reset('Player 2 has won!');
+          reset(`${player2.name} has won!`);
           hasWon = 1;
         }
 
@@ -66,6 +63,22 @@ const gameController = (() => {
   };
 })();
 
-function gamePlay() {
-  gameController.run();
+
+function initPlayers(form) {  
+  const player1Obj = Player(form.player1.value);
+  const player2Obj = Player(form.player2.value);
+
+  const info = document.getElementById('info');
+  const name1 = document.createElement('h2');
+  const name2 = document.createElement('h2');
+
+  name1.innerText = `${form.player1.value} -> "X", color -> brown`;
+  name2.innerText = `${form.player2.value} -> "O", color -> blue`;
+
+  info.appendChild(name1);
+  info.appendChild(name2);
+
+  document.getElementById('board').classList.remove('disabled');
+  
+  gameController.run(player1Obj, player2Obj);
 }

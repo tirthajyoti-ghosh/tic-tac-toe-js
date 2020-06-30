@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-const Player = (token) => ({
-  token,
+const Player = (name) => ({
+  name,
   moves: [],
 });

@@ -5,6 +5,11 @@
   font-family: 'Nunito', sans-serif;
 }
 
+body {
+  width: 40%;
+  margin: 0 auto;
+}
+
 .btn {
   background-color: darkslategray;
   color: white;
@@ -48,12 +53,17 @@
   font-size: 16px;
 }
 
+#info {
+  text-align: center;
+}
+
 #board {
   display: flex;
   background-color: brown;
   width: 450px;
   flex-wrap: wrap;
   position: relative;
+  margin: 0 auto;
 }
 
 #board #reset {
