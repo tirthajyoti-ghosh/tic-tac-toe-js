@@ -9,14 +9,33 @@
 </head>
 <body onload="gamePlay()">
   <h1>Tic Tac Toe</h1>
+  <form action="javascript: input(this)" class="form">
+    <div class="field">
+      <label for="player1">
+        Player 1 name:
+        <input type="text" name="player1">
+      </label>
+    </div>
+    <div class="field">
+      <label for="player2">
+        Player 2 name:
+        <input type="text" name="player2">
+      </label>
+    </div>
+    
+    <div class="field">
+      <button class="btn">Start</button>
+    </div>
+  </form>
+
   <h2>Player one -> "X", color -> brown</h2>
   <h2>Player two -> "O", color -> blue</h2>
   
-  <div id="board" class="player-1">
+  <div id="board" class="player-1 disabled">
     <div id="reset">
       <div id="modal">
         <h3 id="player"></h3>
-        <button id="reset-btn">Reset</button>
+        <button id="reset-btn" class="btn">Reset</button>
       </div>
     </div>
     <div class="cell"></div>

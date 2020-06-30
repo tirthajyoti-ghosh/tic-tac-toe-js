@@ -5,6 +5,49 @@
   font-family: 'Nunito', sans-serif;
 }
 
+.btn {
+  background-color: darkslategray;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:hover {
+  outline: none;
+  padding: 11px 16px;
+}
+
+.btn:active {
+  padding: 10px 15px;
+}
+
+.form {
+  margin: 20px auto;
+  width: 300px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.form .field {
+  margin: 20px;
+}
+
+.field input {
+  padding: 10px;
+  background-color: rgba(209, 208, 208, 0.363);
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
 #board {
   display: flex;
   background-color: brown;
@@ -37,26 +80,6 @@
   margin: 0;
   padding: 43px 0;
   font-size: 25px;
-}
-
-#modal #reset-btn {
-  background-color: darkslategray;
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#modal #reset-btn:focus,
-#modal #reset-btn:hover {
-  outline: none;
-  padding: 11px 16px;
-}
-
-#modal #reset-btn:active {
-  padding: 10px 15px;
 }
 
 #board.player-2 {
