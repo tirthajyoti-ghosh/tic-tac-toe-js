@@ -1,6 +1,6 @@
 # Tic Tac Toe JS
 
-![image](https://user-images.githubusercontent.com/57726348/86138984-ce197d00-bb0c-11ea-9ba8-af9d5fa9744c.png)
+![image](https://user-images.githubusercontent.com/57726348/86139411-51d36980-bb0d-11ea-8404-e1745274098a.png)
 
 
 The classical game of tic tac toe is built collaboratively using HTML, a bit of CSS, and a whole lot of JS.
