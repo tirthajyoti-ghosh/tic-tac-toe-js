@@ -64,7 +64,7 @@ const gameController = (() => {
 })();
 
 
-function initPlayers(form) {  
+function initPlayers(form) {
   const player1Obj = Player(form.player1.value);
   const player2Obj = Player(form.player2.value);
 
@@ -79,6 +79,6 @@ function initPlayers(form) {
   info.appendChild(name2);
 
   document.getElementById('board').classList.remove('disabled');
-  
+
   gameController.run(player1Obj, player2Obj);
 }
