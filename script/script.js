@@ -1,8 +1,6 @@
-/* eslint-disable no-loop-func */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-
+const turn1 = ['X', 'O'];
+let clicks = 0;
 const gameController = (() => {
   const reset = (msg) => {
     document.getElementById('reset').style.display = 'block';
@@ -11,50 +9,52 @@ const gameController = (() => {
       window.location.reload();
     });
   };
+  const listner = (cells, player1, player2, i) => {
+    const { board } = gameBoard;
+    let turn;
+    const cell = cells[i];
+    if (cell.innerText !== '') {
+      return;
+    }
+    turn = turn1[clicks % 2];
+    clicks += 1;
+
+    gameBoard.setTurn(cell, turn);
+
+    board.classList.toggle('player-2');
+    board.classList.toggle('player-1');
+
+    if (turn === 'X') {
+      player1.moves.push(i);
+      turn = 'O';
+    } else {
+      player2.moves.push(i);
+      turn = 'X';
+    }
+
+    let hasWon = 0;
+
+    if (game.isWinner(player1.moves)) {
+      reset(`${player1.name} has won!`);
+      hasWon = 1;
+    }
+
+    if (game.isWinner(player2.moves)) {
+      reset(`${player2.name} has won!`);
+      hasWon = 1;
+    }
+
+    if ((hasWon === 0) && (game.isDraw(cells))) {
+      reset('The game is draw!');
+    }
+  };
 
   const run = (player1, player2) => {
-    const { board } = gameBoard;
     const { cells } = gameBoard;
-
-    let turn = 'X';
 
     for (let i = 0; i < cells.length; i += 1) {
       const cell = cells[i];
-
-      cell.addEventListener('click', () => {
-        if (cell.innerText !== '') {
-          return;
-        }
-
-        gameBoard.setTurn(cell, turn);
-
-        board.classList.toggle('player-2');
-        board.classList.toggle('player-1');
-
-        if (turn === 'X') {
-          player1.moves.push(i);
-          turn = 'O';
-        } else {
-          player2.moves.push(i);
-          turn = 'X';
-        }
-
-        let hasWon = 0;
-
-        if (game.isWinner(player1.moves)) {
-          reset(`${player1.name} has won!`);
-          hasWon = 1;
-        }
-
-        if (game.isWinner(player2.moves)) {
-          reset(`${player2.name} has won!`);
-          hasWon = 1;
-        }
-
-        if ((hasWon === 0) && (game.isDraw(cells))) {
-          reset('The game is draw!');
-        }
-      });
+      cell.addEventListener('click', () => listner(cells, player1, player2, i));
     }
   };
 
@@ -64,7 +64,8 @@ const gameController = (() => {
 })();
 
 
-function initPlayers(form) {
+// eslint-disable-next-line no-unused-vars
+const initPlayers = (form) => {
   const player1Obj = Player(form.player1.value);
   const player2Obj = Player(form.player2.value);
 
@@ -81,4 +82,4 @@ function initPlayers(form) {
   document.getElementById('board').classList.remove('disabled');
 
   gameController.run(player1Obj, player2Obj);
-}
+};
