@@ -13,7 +13,7 @@ The classical game of tic tac toe is built collaboratively using HTML, a bit of 
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/tirthajyoti-ghosh/tic-tac-toe-js/2c368a3c3bce2df8ebf8ea21c78e209f76ef3bf1/index.html)
+[Live Demo Link](https://rawcdn.githack.com/tirthajyoti-ghosh/tic-tac-toe-js/9e7feb091fd7328fdbee88dd223f5f8ffc7b1027/index.html)
 
 
 ## Authors
