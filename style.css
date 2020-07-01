@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: darkslategray;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:hover {
+  outline: none;
+  padding: 11px 16px;
+}
+
+.btn:active {
+  padding: 10px 15px;
+}
+
+.form {
+  margin: 20px auto;
+  width: 300px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.form .field {
+  margin: 20px;
+}
+
+.field input {
+  padding: 10px;
+  background-color: rgba(209, 208, 208, 0.363);
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+#info {
+  text-align: center;
+}
+
+#board {
+  display: flex;
+  background-color: brown;
+  width: 450px;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+}
+
+#board #reset {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.466);
+  display: none;
+}
+
+#reset #modal {
+  height: 195px;
+  width: 230px;
+  text-align: center;
+  position: relative;
+  top: 130px;
+  left: 110px;
+  background-color: white;
+}
+
+#modal #player {
+  margin: 0;
+  padding: 43px 0;
+  font-size: 25px;
+}
+
+#board.player-2 {
+  background-color: blue;
+}
+
+#board .cell {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  color: white;
+  font-size: 90px;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}

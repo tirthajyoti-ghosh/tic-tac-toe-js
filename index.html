@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIC-TAC-TOE</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <form action="javascript: initPlayers(this)" class="form">
+    <div class="field">
+      <label for="player1">
+        Player 1 name:
+        <input type="text" id="player1" required>
+      </label>
+    </div>
+    <div class="field">
+      <label for="player2">
+        Player 2 name:
+        <input type="text" id="player2" required>
+      </label>
+    </div>
+    
+    <div class="field">
+      <button class="btn">Start</button>
+    </div>
+  </form>
+
+  <div id="info"></div>
+  
+  <div id="board" class="player-1 disabled">
+    <div id="reset">
+      <div id="modal">
+        <h3 id="player"></h3>
+        <button id="reset-btn" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <script src="script/script.js"></script>
+  <script src="script/logic.js"></script>
+  <script src="script/player.js"></script>
+  <script src="script/board.js"></script>
+</body>
+</html>
