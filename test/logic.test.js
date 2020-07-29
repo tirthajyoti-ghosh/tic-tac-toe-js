@@ -1,6 +1,6 @@
 const game = require('../script/logic');
 
-describe('tests for isWinner', () => {  
+describe('tests for isWinner', () => {
   it('returns true for right combination', () => {
     expect(game.isWinner([3, 6, 9])).toBe(true);
   });
@@ -16,10 +16,10 @@ describe('tests for isWinner', () => {
 
 describe('tests for isDraw', () => {
   it('returns true when all cells are filled', () => {
-    expect(game.isDraw(["X", "O", "X", "O", "X", "X", "O", "X", "O"])).toBe(true);
+    expect(game.isDraw(['X', 'O', 'X', 'O', 'X', 'X', 'O', 'X', 'O'])).toBe(true);
   });
 
   it('returns false when any cell is empty', () => {
-    expect(game.isDraw(["X", "O", "X", "O", "X", "X", "", "X", "O"])).toBe(false);
+    expect(game.isDraw(['X', 'O', 'X', 'O', 'X', 'X', '', 'X', 'O'])).toBe(false);
   });
 });
