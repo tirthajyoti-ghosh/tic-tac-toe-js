@@ -1,4 +1,4 @@
-/*eslint linebreak-style: ["error", "windows"]*/
+/* eslint linebreak-style: ["error", "windows"] */
 
 const game = require('../script/logic');
 
