@@ -1,13 +1,17 @@
 /* eslint-disable no-unused-vars */
 
 const game = (() => {
-  const winCombinations = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
+  const winCombinations = () => {
+    return [[1, 2, 3], [4, 5, 6], [7, 8, 9],
     [1, 5, 9], [3, 5, 7], [1, 4, 7],
     [2, 5, 8], [3, 6, 9]];
+  };
 
   const isWinner = (moves) => {
-    for (let i = 0; i < winCombinations.length; i += 1) {
-      const comb = winCombinations[i];
+    const winCombs = winCombinations();
+
+    for (let i = 0; i < winCombs.length; i += 1) {
+      const comb = winCombs[i];
 
       const intersection = moves.filter(value => comb.includes(value)).sort();
 
@@ -19,11 +23,11 @@ const game = (() => {
     return false;
   };
 
-  const isDraw = (cells) => {
-    for (let i = 0; i < cells.length; i += 1) {
-      const cell = cells[i];
+  const isDraw = (cellTexts) => {
+    for (let i = 0; i < cellTexts.length; i += 1) {
+      const cell = cellTexts[i];
 
-      if (cell.innerText === '') {
+      if (cell === '') {
         return false;
       }
     }
@@ -36,3 +40,5 @@ const game = (() => {
     isDraw,
   };
 })();
+
+module.exports = game;

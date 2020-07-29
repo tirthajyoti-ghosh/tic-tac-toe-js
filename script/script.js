@@ -44,7 +44,13 @@ const gameController = (() => {
       hasWon = 1;
     }
 
-    if ((hasWon === 0) && (game.isDraw(cells))) {
+    const cellTexts = [];
+
+    for (let i = 1; i < cells.length; i += 1) {
+      cellTexts.push(cells[i].innerText);
+    }    
+
+    if ((hasWon === 0) && (game.isDraw(cellTexts))) {
       reset('The game is draw!');
     }
   };
