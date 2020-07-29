@@ -1,3 +1,5 @@
+/*eslint linebreak-style: ["error", "windows"]*/
+
 const game = require('../script/logic');
 
 describe('tests for isWinner', () => {
