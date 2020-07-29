@@ -13,3 +13,13 @@ describe('tests for isWinner', () => {
     expect(game.isWinner([6, 1, 7])).toBe(false);
   });
 });
+
+describe('tests for isDraw', () => {
+  it('returns true when all cells are filled', () => {
+    expect(game.isDraw(["X", "O", "X", "O", "X", "X", "O", "X", "O"])).toBe(true);
+  });
+
+  it('returns false when any cell is empty', () => {
+    expect(game.isDraw(["X", "O", "X", "O", "X", "X", "", "X", "O"])).toBe(false);
+  });
+});
