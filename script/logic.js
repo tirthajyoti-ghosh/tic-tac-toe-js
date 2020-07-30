@@ -19,11 +19,11 @@ const game = (() => {
     return false;
   };
 
-  const isDraw = (cells) => {
-    for (let i = 0; i < cells.length; i += 1) {
-      const cell = cells[i];
+  const isDraw = (cellTexts) => {
+    for (let i = 0; i < cellTexts.length; i += 1) {
+      const cell = cellTexts[i];
 
-      if (cell.innerText === '') {
+      if (cell === '') {
         return false;
       }
     }
@@ -36,3 +36,5 @@ const game = (() => {
     isDraw,
   };
 })();
+
+module.exports = game;
